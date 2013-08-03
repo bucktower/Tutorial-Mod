@@ -1,4 +1,4 @@
-package fisherman77.TutorialMod.common;
+package fisherman77.tutorialmod.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import fisherman77.zeuscraft.common.Zeuscraft;
 
 public class TutorialModCommonProxy implements IGuiHandler{ //THIS IS IMPORTANT, CANNOT BE A PROXY/GUI HANDLER WITHOUT THIS!!
 public void registerRenderInformation() //Client side texture registering
@@ -30,6 +31,8 @@ public void registerBlocks(){ //For registering Blocks
 }
 
 public void registerItems(){ //For registering Items
-
+	//Lime
+		LanguageRegistry.addName(TutorialMod.Lime, "Lime");
+		GameRegistry.addRecipe(new ItemStack(TutorialMod.Lime), "M M", " M ", "MMM", Character.valueOf('M'), Block.planks);
 }
 }
