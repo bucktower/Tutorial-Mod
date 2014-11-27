@@ -1,4 +1,4 @@
-package fisherman77.tutorialmod.common.handlers;
+package org.coderdojoia.tutorialmod.common.handlers;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;

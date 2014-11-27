@@ -1,7 +1,7 @@
-package fisherman77.tutorialmod.client;
+package org.coderdojoia.tutorialmod.client;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
-import fisherman77.tutorialmod.common.TutorialModCommonProxy;
+import org.coderdojoia.tutorialmod.common.TutorialModCommonProxy;
 import fisherman77.zeuscraft.common.mobs.EntityPegasus;
 import fisherman77.zeuscraft.common.mobs.ModelPegasus;
 import fisherman77.zeuscraft.common.mobs.RenderPegasus;

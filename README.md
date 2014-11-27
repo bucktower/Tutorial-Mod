@@ -34,8 +34,10 @@ _NOTA BENE: All versions mentioned have been tested as of 2014-11-24 but are sub
 
   ```bash
   cd com
-  git checkout -b com.gmail.johndoe
-  git mv fisherman77 gmail/johndoe
+  SIGNATURE=com.gmail.johndoe
+  git checkout -b ${SIGNATURE}
+  git mv coderdojoia gmail/johndoe
+  find gmail/johndoe -type f -name *.java -exec sed -i old s/org.coderdojoia.tutorialmod/${SIGNATURE}.tutorialmod/g {} \;
   git commit -a -m "Updated directory structure to com/gmail/johndoe"
   ```
   

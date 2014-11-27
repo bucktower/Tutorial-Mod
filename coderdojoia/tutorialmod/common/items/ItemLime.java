@@ -1,4 +1,4 @@
-package fisherman77.tutorialmod.common.items;
+package org.coderdojoia.tutorialmod.common.items;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

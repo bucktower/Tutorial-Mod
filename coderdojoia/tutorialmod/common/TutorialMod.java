@@ -1,5 +1,5 @@
 
-package fisherman77.tutorialmod.common; //The package your mod is in
+package org.coderdojoia.tutorialmod.common; //The package your mod is in
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
@@ -18,9 +18,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 import cpw.mods.fml.common.SidedProxy;
-import fisherman77.tutorialmod.common.handlers.TutorialModServerPacketHandler;
-import fisherman77.tutorialmod.common.handlers.TutorialModClientPacketHandler;
-import fisherman77.tutorialmod.common.items.ItemLime;
+import org.coderdojoia.tutorialmod.common.handlers.TutorialModServerPacketHandler;
+import org.coderdojoia.tutorialmod.common.handlers.TutorialModClientPacketHandler;
+import org.coderdojoia.tutorialmod.common.items.ItemLime;
 import fisherman77.zeuscraft.common.mobs.EntityPegasus;
 
 @NetworkMod(clientSideRequired=true,serverSideRequired=true, //Whether client side and server side are needed

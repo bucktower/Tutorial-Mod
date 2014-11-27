@@ -1,4 +1,4 @@
-package fisherman77.tutorialmod.common;
+package org.coderdojoia.tutorialmod.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
