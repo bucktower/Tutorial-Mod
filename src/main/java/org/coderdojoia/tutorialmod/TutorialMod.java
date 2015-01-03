@@ -2,6 +2,7 @@ package org.coderdojoia.tutorialmod;
 
 // Make the needed the libraries accessible
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -49,19 +50,41 @@ public class TutorialMod  // <-- mod class
 		 * so we need a temporary recipe to create concrete in Survival
 		 *      2 cobblestone = 4 concrete
 		 */
-    	ItemStack myStack = new ItemStack(Blocks.dirt);
-    	System.out.println("Created cobbleStack...");
-        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.cobblestone, 4), 
-        	myStack
-        );
+    	ItemStack shapelessInput = new ItemStack(Blocks.cobblestone, 2);
+    	ItemStack shapelessOutput = new ItemStack(concrete, 4);
+        GameRegistry.addShapelessRecipe(shapelessOutput, shapelessInput);
         
-        GameRegistry.addRecipe(new ItemStack(Blocks.dirt),
+        ItemStack shapedOutput = new ItemStack(concrete, 16);
+        GameRegistry.addRecipe(shapedOutput,
         	"   ", 
         	" # ", 
         	"   ", 
-        	'#', new ItemStack(Blocks.cobblestone)
+        	'#', Blocks.cobblestone
         );
-    }
+        GameRegistry.addRecipe(shapedOutput,
+            	"A5*", 
+            	" # ", 
+            	"   ", 
+            	'A', Items.apple, '5', Items.cake, '*', Blocks.grass, '#', Blocks.cobblestone
+            );
+        ItemStack shaped2x2Output = new ItemStack(concrete, 4);
+        GameRegistry.addRecipe(shaped2x2Output,
+            	"DD", 
+            	'D', Blocks.cobblestone
+            );
+        ItemStack shapedOutput1 = new ItemStack(concrete, 1);
+        GameRegistry.addRecipe(shapedOutput1,
+        		"###",
+        		"*U*",
+        		"###",
+        		'#', Blocks.cobblestone, '*', Items.nether_star, 'U', Items.bucket
+        	);
+        GameRegistry.addSmelting(Blocks.cobblestone, new ItemStack(concrete), 1F);
+        ItemStack OPickaxe = new ItemStack(Items.iron_pickaxe);
+        OPickaxe.addEnchantment(Enchantment.silkTouch, 1);    
+        OPickaxe.addEnchantment(Enchantment.efficiency, 127);   
+        GameRegistry.addShapelessRecipe(OPickaxe, Items.iron_pickaxe, Items.stick);
+        }
     
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
