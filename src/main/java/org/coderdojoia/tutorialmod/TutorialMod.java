@@ -3,6 +3,8 @@ package org.coderdojoia.tutorialmod;
 // Make the needed the libraries accessible
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -11,7 +13,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import org.coderdojoia.tutorialmod.BlockConcrete;
 
-@Mod(modid = TutorialMod.MODID, version = TutorialMod.VERSION) // Forge annotation
+@Mod(modid = TutorialMod.MODID, version = TutorialMod.VERSION, name="tutorialmod") // Forge annotation
 public class TutorialMod  // <-- mod class
 {
 	/* 
@@ -43,9 +45,22 @@ public class TutorialMod  // <-- mod class
     public void init(FMLInitializationEvent event)
     {
     	/*
-		 * some example code: print out the "dirt" block name
+		 * We can't test concrete's harvestLevel in Creative mode,
+		 * so we need a temporary recipe to create concrete in Survival
+		 *      2 cobblestone = 4 concrete
 		 */
-        System.out.println("DIRT BLOCK >> " + Blocks.dirt.getUnlocalizedName());
+    	ItemStack myStack = new ItemStack(Blocks.dirt);
+    	System.out.println("Created cobbleStack...");
+        GameRegistry.addShapelessRecipe(new ItemStack(Blocks.cobblestone, 4), 
+        	myStack
+        );
+        
+        GameRegistry.addRecipe(new ItemStack(Blocks.dirt),
+        	"   ", 
+        	" # ", 
+        	"   ", 
+        	'#', new ItemStack(Blocks.cobblestone)
+        );
     }
     
     @EventHandler
